@@ -38,7 +38,6 @@ with st.container():
             st.stop()
 
         llm_config = {
-            "request_timeout": 600,
             "config_list": [
                 {
                     "model": selected_model,
