@@ -191,20 +191,20 @@ task = """Generate a real estate report to show some homes I am interested"""
 st.write("""# REAL ESTATE FINDER""")
 
 
-class TrackableUSER(autogen.ConversableAgent):
+class TrackableUSER(ConversableAgent):
     def _process_received_message(self, message, sender, silent):
         with st.chat_message(sender.name):
             st.markdown(message)
         return super()._process_received_message(message, sender, silent)
 
 
-class TrackablePLANNER(autogen.ConversableAgent):
+class TrackablePLANNER(ConversableAgent):
     def _process_received_message(self, message, sender, silent):
         with st.chat_message(sender.name):
             st.markdown(message)
         return super()._process_received_message(message, sender, silent)
 
-class TrackableWRITER(autogen.ConversableAgent):
+class TrackableWRITER(ConversableAgent):
     def _process_received_message(self, message, sender, silent):
         with st.chat_message(sender.name):
             st.markdown(message)
@@ -374,6 +374,8 @@ with st.container():
                 manager,
                 message=user_input,
             )
+        
+        loop.run_until_complete(initiate_chat())
         
         print('loop after')
 
