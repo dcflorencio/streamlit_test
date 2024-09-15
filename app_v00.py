@@ -212,7 +212,7 @@ class TrackableWRITER(ConversableAgent):
 
 with st.container():
 
-    user_input = st.chat_input("what kind of home do you want?")
+    user_input = st.chat_input(task)
     if user_input:
         
         user_proxy = TrackableUSER(
