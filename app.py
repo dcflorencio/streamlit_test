@@ -48,11 +48,15 @@ with st.container():
         }
         # create an AssistantAgent instance named "assistant"
         assistant = TrackableAssistantAgent(
-            name="assistant", llm_config=llm_config)
+            name="assistant", llm_config=llm_config,
+            code_execution_config={"work_dir":"coding", "use_docker":False}
+            )
 
         # create a UserProxyAgent instance named "user"
         user_proxy = TrackableUserProxyAgent(
-            name="user", human_input_mode="NEVER", llm_config=llm_config)
+            name="user", human_input_mode="NEVER", llm_config=llm_config,
+            code_execution_config={"work_dir":"coding", "use_docker":False}
+            )
 
         # Create an event loop
         loop = asyncio.new_event_loop()
