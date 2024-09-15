@@ -368,7 +368,7 @@ with st.container():
         asyncio.set_event_loop(loop)
 
         async def initiate_chat():
-            await user_proxy.initiate_chat(
+            user_proxy.initiate_chat(
                 manager,
                 message=task,
             )
