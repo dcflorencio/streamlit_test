@@ -212,7 +212,7 @@ class TrackableWRITER(autogen.ConversableAgent):
 
 with st.container():
 
-    user_input = st.chat_input("Type something...")
+    user_input = st.chat_input(task)
     if user_input:
         
         user_proxy = TrackableUSER(
@@ -368,7 +368,7 @@ with st.container():
         asyncio.set_event_loop(loop)
 
         async def initiate_chat():
-            user_proxy.initiate_chat(
+            await user_proxy.initiate_chat(
                 manager,
                 message=task,
             )
