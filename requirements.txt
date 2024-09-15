@@ -1,3 +1,4 @@
+agentops
 streamlit
 asyncio
 openai
