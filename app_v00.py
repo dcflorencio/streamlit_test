@@ -372,10 +372,11 @@ with st.container():
         async def initiate_chat():
             await user_proxy.initiate_chat(
                 manager,
-                message=task,
+                message=user_input,
             )
         
         print('loop after')
 
+print('loop outside')
 
 agentops.end_session("Success")
