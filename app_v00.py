@@ -212,6 +212,8 @@ class TrackableWRITER(autogen.ConversableAgent):
 
 with st.container():
 
+    user_input = st.chat_input("Type something...")
+
     user_proxy = TrackableUSER(
         name="Admin",
         system_message="Give the task, and send "
