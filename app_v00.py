@@ -367,10 +367,15 @@ with st.container():
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
 
+        print('loop before')
+
         async def initiate_chat():
             await user_proxy.initiate_chat(
                 manager,
                 message=task,
             )
+        
+        print('loop after')
 
-        agentops.end_session("Success")
+
+agentops.end_session("Success")
