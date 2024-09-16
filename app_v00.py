@@ -376,7 +376,7 @@ with st.container():
         async def initiate_chat():
             await user_proxy.initiate_chat(
                 manager,
-                message=task,
+                message=user_input,
             )
         
         loop.run_until_complete(initiate_chat())
