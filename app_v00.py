@@ -214,11 +214,12 @@ class TrackableWRITER(ConversableAgent):
             st.markdown(content)
         return super()._process_received_message(message, sender, silent)
 
-user_input = st.chat_input(task)
+
 
 with st.container():
 
-
+    user_input = st.chat_input(task)
+    
     if user_input:
         
         user_proxy = TrackableUSER(
