@@ -202,14 +202,16 @@ class TrackableUSER(ConversableAgent):
 
 class TrackablePLANNER(ConversableAgent):
     def _process_received_message(self, message, sender, silent):
+        content = message.get('content', message) if isinstance(message, dict) else message
         with st.chat_message(sender.name):
-            st.markdown(message)
+            st.markdown(content)
         return super()._process_received_message(message, sender, silent)
 
 class TrackableWRITER(ConversableAgent):
     def _process_received_message(self, message, sender, silent):
+        content = message.get('content', message) if isinstance(message, dict) else message
         with st.chat_message(sender.name):
-            st.markdown(message)
+            st.markdown(content)
         return super()._process_received_message(message, sender, silent)
 
 user_input = st.chat_input(task)
