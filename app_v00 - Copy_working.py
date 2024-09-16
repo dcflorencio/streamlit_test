@@ -312,14 +312,16 @@ with st.container():
             llm_config=llm_config,
             system_message="""Writer.
             Please write a real estate report.
+            The report should have the structure.
             Include a photo for each listing.
+            And put the content in pseudo ```md``` code block.
             You take feedback from the user/admin and refine your report.
             Every time you generate a report, ALWAYS save it as a markdown file calling the save_markdown_file() function.
             Always ask the user/admin for feedback.
             If the user asks for different data DON'T MAKE UP DATA, ALWAYS ask the engineer to query the new data the user asked.
             NEVER MAKE UP FICTITIOUS DATA.
+            ALWAYS SAVE A MARKDOWN FILE calling the save_markdown_file() function.
             dont forget to CALL THE save_markdown_file()""",
-            
             description="""Writer.
             Write real estate report based on the code execution results and take 
             feedback from the admin to refine the report."""
