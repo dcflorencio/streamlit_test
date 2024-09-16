@@ -319,7 +319,7 @@ with st.container():
             If the user asks for different data DON'T MAKE UP DATA, ALWAYS ask the engineer to query the new data the user asked.
             NEVER MAKE UP FICTITIOUS DATA.
             dont forget to CALL THE save_markdown_file()""",
-            
+
             description="""Writer.
             Write real estate report based on the code execution results and take 
             feedback from the admin to refine the report."""
@@ -376,7 +376,7 @@ with st.container():
         async def initiate_chat():
             await user_proxy.initiate_chat(
                 manager,
-                message=user_input,
+                message=task,
             )
         
         loop.run_until_complete(initiate_chat())
