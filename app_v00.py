@@ -219,7 +219,7 @@ class TrackableWRITER(ConversableAgent):
 with st.container():
 
     user_input = st.chat_input(task)
-    
+
     if user_input:
         
         user_proxy = TrackableUSER(
@@ -377,7 +377,7 @@ with st.container():
         async def initiate_chat():
             await user_proxy.initiate_chat(
                 manager,
-                message=user_input,
+                message=task,
             )
         
         loop.run_until_complete(initiate_chat())
